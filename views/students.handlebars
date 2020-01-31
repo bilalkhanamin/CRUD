@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>peples</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        {{!-- <ul class="list-group">
+            {{#each newStudent}}
+            <li class="list-items">{{this.name}}: {{this.department}}</li>
+            {{/each}}
+        </ul> --}}
+        <h2 class="text-center mt-5 mb-5 bg-primary p-3 text-white">Enrolled Students</h2>
+        <table class="table table-hover">
+            <tr>
+                <th>Full Name</th>
+                <th>F/Name</th>
+                <th>Session</th>
+                <th>Dept.</th>
+                <th>CGPA</th>
+                <th>Semester</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th></th>
+            </tr>
+            {{#each newStudent}}
+            <tr class="table_row">
+                <td>{{this.name}}</td>
+                <td>{{this.fname}}</td>
+                <td>{{this.session}}</td>
+                <td>{{this.department}}</td>
+                <td>{{this.cgpa}}</td>
+                <td>{{this.semester}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.phone}}</td>
+                <td> <a href="students/{{this._id}}" }>visit</a></td>
+
+
+            </tr>
+
+            {{/each}}
+        </table>
+
+        <a href="/" class="btn btn-primary">Home</a>
+    </div>`
+</body>
+
+</html>

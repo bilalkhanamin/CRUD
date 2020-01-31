@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HOME</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: lato;
+        }
+
+        body {
+            height: 100vh;
+            background-image: linear-gradient(to right, rgb(98, 211, 226), rgba(86, 130, 224, 0.986));
+        }
+
+        .container {
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(235, 235, 235);
+
+            border-radius: 6px;
+        }
+
+        hr {
+            padding: 0;
+            margin: 0;
+            max-width: 100%;
+        }
+
+        header h1 {
+            padding: 1.5rem 0;
+            color: rgb(153, 153, 153);
+            text-align: center;
+            font-weight: 200
+        }
+
+        .container input[type="text"] {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            background: rgb(255, 255, 255);
+            outline: none;
+        }
+
+        .container input[type="number"] {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            background: rgb(255, 255, 255);
+            outline: none;
+        }
+
+
+
+
+        .container form {
+            padding: 0 2rem;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            color: rgb(48, 46, 46);
+        }
+
+        form section {
+            padding: 0.5rem;
+
+        }
+
+        form div {
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+        }
+
+        form label {
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .submit {
+            border: none;
+            border-radius: 4px;
+            padding: 10px 15px;
+            margin: 1rem 0 2rem 13rem;
+            outline: none;
+            text-align: center
+        }
+
+        .submit:hover {
+            background: rgb(202, 202, 202);
+        }
+
+        #input:focus {
+            border: 0.5px solid rgb(190, 190, 190);
+        }
+
+        span {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        form:last-child {
+            display: block;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: rgb(77, 77, 77);
+            font-size: 16px;
+            background: rgb(235, 235, 235);
+            padding: 0.5rem;
+            border-radius: 5px;
+            position: relative;
+            top: 92%;
+            left: 45%;
+        }
+
+        .btn:hover {
+            background: rgb(226, 226, 226);
+        }
+    </style>
+</head>
+
+<body>
+    {{!-- <h1>My name is {{bee.name}} and my hobby is {{bee.hobby}}</h1>
+    <ul>
+        {{#each peoples}}
+        <li>My name {{this.name}} and i am {{this.email}} year old, currently studying in {{dept.name}} in the universiy
+            of malakand</li>
+
+        {{/each}}
+    </ul> --}}
+
+    <div class="container">
+        <header>
+            <h1>Students Proforma</h1>
+            <hr>
+        </header>
+
+        <div class="form_container">
+            <form action="/students/{{student._id}}/edit" method="POST">
+                <section>
+                    <div>
+                        <label for="name">Full name</label>
+                        <input type="text" name="name" id="input" placeholder="John Doe" value={{student.name}}
+                            required>
+                    </div>
+                    <div>
+                        <label for="Fname">F/Name</label>
+                        <input type="text" name="fname" id="input" placeholder="Jone Doe" value={{student.fname}}>
+                    </div>
+
+                    <div>
+                        <label for="session">Session</label>
+                        <input type="text" name="session" id="input" placeholder="2015-2019" value={{student.session}}>
+                    </div>
+
+                    <div>
+                        <label for="department">Dept.</label>
+                        <input type="text" name="department" id="input" placeholder="CS&IT"
+                            value={{student.department}}>
+                    </div>
+
+                </section>
+
+                <section>
+                    <div>
+                        <label for="cgpa">CGPA</label>
+                        <input type="number" name="cgpa" id="input" placeholder="4.00" value={{student.cgpa}}>
+                    </div>
+                    <div>
+                        <label for="semester">Semester</label>
+                        <input type="text" name="semester" id="input" placeholder="5th" value={{student.semester}}>
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="input" placeholder="name@provider.com"
+                            value={{student.email}}>
+                    </div>
+
+                    <div>
+                        <label for="phone">Phone</label>
+                        <input type="text" name="phone" id="input" placeholder="+92 0000000" value={{student.phone}}>
+                    </div>
+
+
+                </section>
+        </div>
+
+        <div>
+            <input type="submit" value="submit" class="submit">
+        </div>
+
+        </form>
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Single student</title>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center p-3 m-3 bg-primary text-white">Student Profile</h1>
+        <ul class="list-group">
+            <li class="list-group-item">Name : {{singleStudent.name}}</li>
+            <li class="list-group-item">F/Name : {{singleStudent.fname}}</li>
+            <li class="list-group-item"> Session : {{singleStudent.session}}</li>
+            <li class="list-group-item"> Department : {{singleStudent.department}}</li>
+            <li class="list-group-item">CGPA : {{singleStudent.cgpa}}</li>
+            <li class="list-group-item">Semester : {{singleStudent.semester}}</li>
+            <li class="list-group-item">Email : {{singleStudent.email}}</li>
+            <li class="list-group-item">Phone : {{singleStudent.phone}}</li>
+        </ul>
+        <a href="/students" class="btn btn-primary mt-3">Back</a>
+        <a href="/students/{{singleStudent._id}}/edit" class="btn btn-warning mt-3">Edit</a>
+        <a href="/students/delete/{{singleStudent._id}}" class="btn btn-danger mt-3 delete-student"
+            data-id="{{singleStudent._id}}">Delete</a>
+
+    </div>
+
+    {{!-- <script>
+        $(document).ready(function () {
+            $(".delete-student").on("click", function (e) {
+                $target = $(e.target);
+                var id = $target.attr("data-id");
+                $.ajax({
+                    type: " DELETE",
+                    url: "/students/" + id,
+                    success: function (response) {
+                        alert("deleting student profile...");
+                        window.location.href = "/students";
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            });
+        });
+
+
+    </script> --}}
+
+
+</body>
+
+</html>
